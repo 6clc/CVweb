@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>感数</title>
+</head>
+<body>
+    <h1>输入图片</h1>
+    <img width="224px" height="224px" src="{{ url_for('static', filename='uploads/' + img_name)}}" alt="img"/>
+    <h1>检测结果</h1>
+    <p>{{ sense_number }}</p>
+    <a class="btn btn-success btn-lg" href="{{ url_for('check_number') }}">再次匹配</a>
+</body>
+</html>

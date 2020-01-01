@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>视觉计算实验室</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css" >
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href={{ url_for('home') }}>首页
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={{ url_for('medical') }}>医学图像</a>
+                    </li>
+                    <li>
+                        <a href={{ url_for('sod') }}>显著性物体检测</a>
+                    </li>
+                    <li>
+                        <a href={{ url_for('number') }}>感数</a>
+                    </li>
+                    <li>
+                        <a href={{ url_for('fixation') }}>人眼注视点预测</a>
+                    </li>
+                    <li>
+                        <a href={{ url_for('competition') }}>比赛相关</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Key Words">
+                    </div>
+                    <button type="submit" class="btn btn-default">搜索</button>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+<div class="jumbotron">
+    <h1></h1>
+  <h1>视觉计算实验室</h1>
+    <p></p>
+    <p></p>
+  <p>   &nbsp; &nbsp; &nbsp; &nbsp;  基于视觉显著性的图像分析、图像分析、目标检测与识别</p>
+  <p>  &nbsp; &nbsp; &nbsp; &nbsp; 医学图像处理</p>
+</div>
+
+<div class="container projects">
+
+    <div class="projects-header page-header">
+      <h2 align="center">主要成果</h2>
+      <p align="center">这些项目是实验室主要的研究方向和成果，实验室的其它项目请浏览页首的tab</p>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+          <div class="thumbnail" style="height: 352px;">
+            <a href="{{url_for('medical') }}" title="腰间盘突出检测" target="_blank" onclick="">
+              <img class="lazy" src="{{ url_for('static', filename='spinal/index.png') }}" width="300" height="150"  alt="腰间盘突出检测">
+            </a>
+            <div class="caption">
+              <h3 align="center">
+                  <a href="{{url_for('check_spinal') }}" title="腰间盘突出检测" >腰间盘突出检测<br><small> 运行实例</small></a>
+              </h3>
+                <p>一种自动的腰椎CT图像分割方法来辅助LSS诊断</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+          <div class="thumbnail" style="height: 352px;">
+            <a href="{{url_for('sod') }}" title="显著性物体分割" target="_blank" onclick="">
+              <img class="lazy" src="{{ url_for('static', filename='sod/index.png') }}" width="300" height="150"  alt="显著性物体分割">
+            </a>
+            <div class="caption">
+              <h3 align="center">
+                  <a href="{{url_for('check_sod') }}" title="显著性物体分割" >显著区域检测<br><small> 运行实例</small></a>
+              </h3>
+                <p>定位图像中最醒目的和最吸引眼球的区域</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 ">
+          <div class="thumbnail" style="height: 352px;">
+            <a href="{{url_for('fixation') }}" title="人眼注视点预测" target="_blank" onclick="">
+              <img class="lazy" src="{{ url_for('static', filename='fixation/index.png') }}" width="300" height="150"  alt="人眼注视点预测">
+            </a>
+            <div class="caption">
+              <h3 align="center">
+                  <a href="{{url_for('check_fixation') }}" title="人眼注视点预测" >人眼注视点预测<br><small> 运行实例</small></a>
+              </h3>
+                <p>模仿人类的选择性视觉机制</p>
+
+            </div>
+          </div>
+        </div>
+
+         <div class="col-sm-6 col-md-4 col-lg-3 ">
+          <div class="thumbnail" style="height: 352px;">
+            <a href="{{url_for('number') }}" title="感数" target="_blank" onclick="">
+              <img class="lazy" src="{{ url_for('static', filename='number/index.png') }}" width="300" height="150"  alt="感数">
+            </a>
+            <div class="caption">
+              <h3 align="center">
+                  <a href="{{url_for('check_number') }}" title="感数" >感数<br><small> 运行实例</small></a>
+              </h3>
+
+                <p>不用挨个数数，DNN一眼看出目标数量</p>
+
+            </div>
+          </div>
+        </div>
+
+         <div class="col-sm-6 col-md-4 col-lg-3 ">
+          <div class="thumbnail" style="height: 352px;">
+            <a href="{{url_for('competition') }}" title="垃圾分类" target="_blank" onclick="">
+              <img class="lazy" src="{{ url_for('static', filename='garbage/index.png') }}" width="300" height="150"  alt="垃圾分类">
+            </a>
+            <div class="caption">
+              <h3 align="center">
+                  <a href="{{url_for('check_garbage') }}" title="垃圾分类" >垃圾分类<br><small> 运行实例</small></a>
+              </h3>
+
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+

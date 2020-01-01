@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垃圾分类检测结果</title>
+</head>
+<body>
+    <h1>垃圾</h1>
+    <img width="224px" height="224px" src="{{ url_for('static', filename='uploads/' + img_name)}}" alt="img"/>
+    <h1>检测结果</h1>
+    <p>{{ garbage_cat }}</p>
+    <a class="btn btn-success btn-lg" href="{{ url_for('check_garbage') }}">再次匹配</a>
+</body>
+</html>
